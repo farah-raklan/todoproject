@@ -18,11 +18,6 @@ public class UserController {
         return "YOU ARE ABLE TO VIEW TODO TASKS";
     }
 
-    @GetMapping("/list")
-    public String list() {
-        return "LIST OF ALL TODO TASKS";
-    }
-
     @GetMapping("/logout-success")
     public String logout() {
         return "YOU HAVE LOGOUT";
