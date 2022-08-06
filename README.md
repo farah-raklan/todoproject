@@ -31,6 +31,8 @@ Postman (https://www.postman.com/downloads/)
 I'm using Postman application to use and test the todoproject.
 <ol>
 <li>Homepage</li>
+</ol>
+<ol>
 <li>Open the project folder with IntelliJ</li>
 <li>Run the <b><i>TodoprojectApplication.java</i></b></li>
 </ol>
