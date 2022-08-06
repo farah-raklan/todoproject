@@ -1,4 +1,4 @@
-package com.farahraklan.todoproject.security.oauth2user;
+package com.farahraklan.todoproject.security.oauth2;
 
 import com.farahraklan.todoproject.exception.OAuth2AuthenticationProcessingException;
 import com.farahraklan.todoproject.provider.AuthProvider;

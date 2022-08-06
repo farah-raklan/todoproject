@@ -1,4 +1,6 @@
-package com.farahraklan.todoproject.security.oauth2user;
+package com.farahraklan.todoproject.security.oauth2;
+
+import com.farahraklan.todoproject.security.oauth2.OAuth2UserInfo;
 
 import java.util.Map;
 

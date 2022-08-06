@@ -1,4 +1,4 @@
-package com.farahraklan.todoproject.security;
+package com.farahraklan.todoproject.config;
 
 import com.farahraklan.todoproject.service.CustomOAuth2UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +28,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .userService(customOAuth2UserService);
         http.csrf().disable();
         http.headers().frameOptions().disable();
-        }
+    }
 
 }

@@ -4,8 +4,8 @@ import com.farahraklan.todoproject.entities.User;
 import com.farahraklan.todoproject.exception.OAuth2AuthenticationProcessingException;
 import com.farahraklan.todoproject.repositories.UserRepository;
 import com.farahraklan.todoproject.security.UserPrincipal;
-import com.farahraklan.todoproject.security.oauth2user.OAuth2UserInfo;
-import com.farahraklan.todoproject.security.oauth2user.OAuth2UserInfoFactory;
+import com.farahraklan.todoproject.security.oauth2.OAuth2UserInfo;
+import com.farahraklan.todoproject.security.oauth2.OAuth2UserInfoFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.InternalAuthenticationServiceException;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
@@ -14,8 +14,6 @@ import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
-
-import java.util.Optional;
 
 @Service
 public class CustomOAuth2UserService extends DefaultOAuth2UserService {
@@ -39,11 +37,9 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
             throw new OAuth2AuthenticationProcessingException("Email not found from OAuth2 provider");
         }
         User userOptional = userRepository.getUserByEmail(oAuth2UserInfo.getEmail());
-        System.out.println(userOptional);
-        User user = null;
+        User user;
         if (userOptional != null) {
-            user.setUserId(userOptional.getUserId());
-            user.setEmail(userOptional.getEmail());
+            user = userOptional;
         } else {
             user = registerNewUser(oAuth2UserRequest, oAuth2UserInfo);
         }
